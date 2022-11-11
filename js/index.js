@@ -107,7 +107,7 @@ function openeee(num,result,atari){
     }else{
         kazu += 1;
         if(kazu > 10){
-                let timer = setInterval(bakusoku, 1,open,sentaku);
+                let timer = setInterval(bakusoku, 10,open,sentaku);
         }
     }
 }
