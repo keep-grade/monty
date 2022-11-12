@@ -110,23 +110,24 @@ function openeee(num,result,atari){
     }else{
         kazu += 1;
         if(kazu > 10){
-                let timer = setInterval(bakusoku, 1,open,sentaku);
+                let timer = setInterval(bakusoku, 1,open,sentaku,result,atari);
         }
     }
 }
-function bakusoku(a,b) {
+function bakusoku(a,b,c,d) {
     let dum = Math.floor( Math.random() * result );
-    document.getElementById(dum).click();
-    sleep(5);
+    openeee(dum,c,d);
+    sleep(10);
     dom = Math.floor(Math.random()*2) ;
     if(dom == 0){
-    document.getElementById(a).click();
+        openeee(a,c,d);
     }else{
-    document.getElementById(b).click();
+        openeee(b,c,d);
     }
-    sleep(5);
-    document.getElementById("top").click();
-    sleep(5);
+    sleep(10);
+    alleee();
+    count = 0;
+    sleep(10);
 };
 function sleep(waitMsec) {
     var startMsec = new Date();
