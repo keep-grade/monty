@@ -20,3 +20,6 @@ body {
     bottom: calc(50% - 108.5px);
     right: calc(50% - 150px);
 }
+#top_ {
+    width: 0px;
+}
