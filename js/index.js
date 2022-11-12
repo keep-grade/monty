@@ -14,8 +14,9 @@ function alleee(){
     let set3 = document.getElementById("back");
     set3.setAttribute("onclick","");
     set3.setAttribute("id","back_");
-let set2 = document.getElementById("top");
-set2.setAttribute("src","");
+    let set2 = document.getElementById("top");
+    set2.setAttribute("src","");
+    set2.setAttribute("id","top_");
 if(result){
     let atari = Math.floor( Math.random() * result );
     let door = "";
@@ -69,8 +70,9 @@ function openeee(num,result,atari){
             if(num == atari){
                 let set = document.getElementById(num);
                 set.setAttribute("src","images/present_happy_boy.png");
-                let set2 = document.getElementById("top");
+                let set2 = document.getElementById("top_");
                 set2.setAttribute("src","images/kuji_ken2_atari.png");
+                set2.setAttribute("id","top");
                 if(sentaku == num){
                     kono1 += 1; 
                 }else{
@@ -79,8 +81,9 @@ function openeee(num,result,atari){
             }else{
                 let set = document.getElementById(num);
                 set.setAttribute("src","images/door_open.png");
-                let set2 = document.getElementById("top");
+                let set2 = document.getElementById("top_");
                 set2.setAttribute("src","images/kuji_ken3_hazure.png");
+                set2.setAttribute("id","top");
                 if(sentaku == num){
                     kono2 += 1; 
                 }else{
@@ -107,19 +110,27 @@ function openeee(num,result,atari){
     }else{
         kazu += 1;
         if(kazu > 10){
-                let timer = setInterval(bakusoku, 100,open,sentaku);
+                let timer = setInterval(bakusoku, 1,open,sentaku);
         }
     }
 }
 function bakusoku(a,b) {
     let dum = Math.floor( Math.random() * result );
     document.getElementById(dum).click();
+    sleep(5);
     dom = Math.floor(Math.random()*2) ;
     if(dom == 0){
     document.getElementById(a).click();
     }else{
     document.getElementById(b).click();
     }
+    sleep(5);
     document.getElementById("top").click();
-    
+    sleep(5);
 };
+function sleep(waitMsec) {
+    var startMsec = new Date();
+   
+    // 指定ミリ秒間だけループさせる（CPUは常にビジー状態）
+    while (new Date() - startMsec < waitMsec);
+  }
