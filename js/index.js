@@ -117,21 +117,16 @@ function openeee(num,result,atari){
 function bakusoku(a,b,c,d) {
     let dum = Math.floor( Math.random() * result );
     openeee(dum,c,d);
-    sleep(10);
     dom = Math.floor(Math.random()*2) ;
     if(dom == 0){
         openeee(a,c,d);
     }else{
         openeee(b,c,d);
     }
-    sleep(10);
     alleee();
     count = 0;
-    sleep(10);
 };
 function sleep(waitMsec) {
     var startMsec = new Date();
-   
-    // 指定ミリ秒間だけループさせる（CPUは常にビジー状態）
     while (new Date() - startMsec < waitMsec);
   }
