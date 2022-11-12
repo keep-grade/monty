@@ -110,7 +110,7 @@ function openeee(num,result,atari){
     }else{
         kazu += 1;
         if(kazu > 10){
-                let timer = setInterval(bakusoku, 100,open,sentaku,result,atari);
+                let timer = setInterval(bakusoku, 1000,open,sentaku,result,atari);
         }
     }
 }
@@ -126,7 +126,3 @@ function bakusoku(a,b,c,d) {
     alleee();
     count = 0;
 };
-function sleep(waitMsec) {
-    var startMsec = new Date();
-    while (new Date() - startMsec < waitMsec);
-  }
