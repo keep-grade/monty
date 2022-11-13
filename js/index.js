@@ -113,7 +113,7 @@ function openeee(num,result,atarin,komeee){
             if(komeee !== 1){
             kazu += 1;
             if(kazu > 10){
-                let timer = setInterval(bakusoku,10);
+                let timer = setInterval(bakusoku,1);
                 function bakusoku() {
                     let dum = Math.floor( Math.random() * result );
                     openeee(dum,result,atari,1);
