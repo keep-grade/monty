@@ -1,3 +1,4 @@
+
 let sentaku = "";
 let kazu = 0;
 let count = 0;
@@ -31,23 +32,20 @@ if(result){
     }
     let door2 = door.split(",");
     door2.shift();
-    console.log(htmle);
     let output = document.getElementById("output");
     output.innerHTML = htmle;
-    
-    console.log("wwwww");
 }
 }
 
-function openeee(num,result,atari){
+function openeee(num,result,atarin,komeee){
+    var atari = atarin;
     if(document.getElementById(num).getAttribute("src") == "images/door_close_resize.png"){
         if(count == 0){
             for (let step = 0; step < result; step++) {
                 if(step == num){
-
                 }else{
                     if(atari == step){
-                        var open = step;
+                        openn = step;
                     }else{
                     let set = document.getElementById(step);
                     set.setAttribute("src","images/door_open.png");
@@ -60,10 +58,10 @@ function openeee(num,result,atari){
                     hosa = Math.floor( Math.random() * result );
                 }
                 let set = document.getElementById(hosa);
-                console.log(set);
                 set.setAttribute("src","images/door_close_resize.png");
-                var open = set;
+                openn = hosa;
             }
+            click = openn;
             sentaku = num;
             count = 1;
         }else if(count == 1){
@@ -106,23 +104,31 @@ function openeee(num,result,atari){
             set3.setAttribute("onclick","alleee();count = 0;");
             set3.setAttribute("id","back");
             count = 2;
+            
         }
     }else{
-        kazu += 1;
-        if(kazu > 10){
-                let timer = setInterval(bakusoku, 1000,open,sentaku,result,atari);
+        if(komeee == 1){
+
+        }else{
+            if(komeee !== 1){
+            kazu += 1;
+            if(kazu > 10){
+                let timer = setInterval(bakusoku,10);
+                function bakusoku() {
+                    let dum = Math.floor( Math.random() * result );
+                    openeee(dum,result,atari,1);
+                    dom = Math.floor(Math.random()*2) ;
+                    if(dom == 0){
+                        openeee(sentaku,result,atari,1);
+                    }else{
+                        openeee(click,result,atari,1);
+                    }
+                    alleee();
+                    count = 0;
+                };
+            }
+            }
         }
     }
 }
-function bakusoku(a,b,c,d) {
-    let dum = Math.floor( Math.random() * result );
-    openeee(dum,c,d);
-    dom = Math.floor(Math.random()*2) ;
-    if(dom == 0){
-        openeee(a,c,d);
-    }else{
-        openeee(b,c,d);
-    }
-    alleee();
-    count = 0;
-};
+console.log("よくここを見に来たね。\nプログラム大好き君かな？\n誰かに教えてもらったのかな？\nようこそ。\nプログラム見ていってね。");
